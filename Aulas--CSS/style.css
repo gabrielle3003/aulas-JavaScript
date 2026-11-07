@@ -1,0 +1,21 @@
+/* Seletor de Tag */
+body {
+    background-color: #1a1a1a;
+  }
+  
+  /* Seletor de Classe */
+  .texto-destaque {
+    color: #ff3333;
+    font-weight: bold;
+  }
+
+  #palmeiras {
+    color: #22e753;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center; /* Alinhamento horizontal */
+    align-items: center; /* Alinhamento vertical */
+    gap: 40px; /* Espaçamento cravado */
+  }
