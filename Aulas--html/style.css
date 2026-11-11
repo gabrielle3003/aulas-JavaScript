@@ -1,227 +1,373 @@
-*{
-    margin:0;
-    padding:0;
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-body {
-    background: #1a1a1a;
-    color: #e0e0e0;
-    font-family:'Arial', sans-serif;
-    line-height: 1,6;
-}
-:root{
+
+/* VARIÁVEIS */
+:root {
     --cor-sangue: #8b0000;
     --cor-zumbi: #2e8b57;
+
+    --cor-fundo-base: #1a1a1a;
+    --cor-texto-base: #e0e0e0;
+    --cor-superficie: #ffffff;
+
+    --cor-input-fundo: #333333;
+    --cor-input-texto: #ffffff;
+    --cor-borda: #cccccc;
+
+    --espaco-p: 8px;
+    --espaco-m: 16px;
+    --espaco-g: 32px;
+
+    --borda-suave: 8px;
+    --borda-arredondada: 50px;
+
+    --sombra-padrao: 0 4px 8px rgba(0, 0, 0, 0.5);
+    --transicao-rapida: 0.3s ease;
+
+    --fonte-principal: Arial, sans-serif;
 }
-header{
+
+/* TEMA CLARO */
+html[data-theme="light"] {
+    --cor-sangue: #cc0000;
+    --cor-zumbi: #006400;
+
+    --cor-fundo-base: #f4f4f9;
+    --cor-texto-base: #111111;
+    --cor-superficie: #ffffff;
+
+    --cor-input-fundo: #ffffff;
+    --cor-input-texto: #333333;
+    --cor-borda: #cccccc;
+}
+
+/* CONFIGURAÇÕES GERAIS */
+body {
+    background-color: var(--cor-fundo-base);
+    color: var(--cor-texto-base);
+    font-family: var(--fonte-principal);
+    line-height: 1.6;
+    transition: background-color var(--transicao-rapida),
+                color var(--transicao-rapida);
+}
+
+/* CABEÇALHO */
+header {
     background-color: #000000;
-    padding: 20px 40px;
+    padding: var(--espaco-m) var(--espaco-g);
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: column;
+
+    text-align: center;
+    gap: var(--espaco-m);
 }
-header h1{
-    color:var(--cor-sangue);
+
+header h1 {
+    color: var(--cor-sangue);
+    font-size: calc(1.5rem + 1vw);
 }
-nav ul{
-    display:flex;
-    gap: 25px;
+
+header p {
+    color: #ffffff;
+}
+
+/* MENU */
+nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-p);
     list-style: none;
 }
-nav a{
+
+nav a {
     text-decoration: none;
     color: #ffffff;
     font-weight: bold;
     text-transform: uppercase;
-    transition: color 0.3s ease;
+    transition: color var(--transicao-rapida);
 }
-nav a:hover{
-    color:var(--cor-zumbi);
+
+nav a:hover {
+    color: var(--cor-zumbi);
 }
-main{
+
+/* CONTEÚDO PRINCIPAL */
+main {
+    width: 90%;
     max-width: 1000px;
     margin: 40px auto;
 }
 
-section{
-    margin-bottom: 60px;
+section {
+    margin-bottom: calc(var(--espaco-g) * 2);
 }
 
-h2{
+h2 {
     border-bottom: 2px solid var(--cor-sangue);
     padding-bottom: 10px;
+    margin-bottom: var(--espaco-m);
 }
 
-#Boas-Vindas{
+/* BOAS-VINDAS */
+#boas-vindas {
     text-align: center;
 }
 
-img{
+img {
     max-width: 100%;
+    width: 100%;
     height: auto;
-}
-
-img{
-    border-radius: 12px;
-}
-
-img{
-    filter: grayscale(80%) sepia(30%)
-}
-
-img{
+    border-radius: var(--borda-suave);
+    filter: grayscale(80%) sepia(30%);
     transition: filter 0.5s ease;
 }
 
-img:hover{
-    filter:none;
+img:hover {
+    filter: none;
 }
 
-figcaption{
-    font-style: italic; color: #888;
+figcaption {
+    font-style: italic;
+    color: #888888;
     margin-top: 10px;
 }
 
-#beneficios{
+/* BENEFÍCIOS */
+#beneficios {
     display: flex;
-    gap: 40px;
+    flex-direction: column;
+    gap: 20px;
 }
 
-ol{
+ol {
     padding-left: 20px;
 }
 
-li{
+li {
     margin-bottom: 15px;
 }
 
-strong{
+strong {
     color: var(--cor-sangue);
 }
 
-aside{
-    background-color: #222222;
+/* DICA */
+aside {
+    background-color: var(--cor-superficie);
+    color: #222222;
     padding: 20px;
-    border-radius: 8px;
-}
-aside{
-    border: 1px dasched var(--cor-zumbi);
+    border-radius: var(--borda-suave);
+    box-shadow: var(--sombra-padrao);
+    border: 1px dashed var(--cor-zumbi);
 }
 
-blockquote{
+aside h3 {
+    color: var(--cor-zumbi);
+    margin-bottom: 10px;
+}
+
+/* DEPOIMENTOS */
+blockquote {
     font-size: 1.2rem;
     font-style: italic;
-}
-
-blockquote{
     border-left: 5px solid var(--cor-zumbi);
     padding-left: 20px;
 }
 
-cite{
+cite {
     display: block;
     text-align: right;
-    color: red;
+    color: var(--cor-sangue);
 }
 
-table{
+/* TABELA */
+table {
     width: 100%;
     border-collapse: collapse;
 }
 
-th,td{
-    border: 1px solid #444;
+th, td {
+    border: 1px solid #444444;
     padding: 15px;
+    text-align: left;
 }
 
-th{
+th {
     background-color: var(--cor-sangue);
-    color: white;
+    color: #ffffff;
 }
 
-fieldset{
+table caption {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* FORMULÁRIO */
+fieldset {
     border: 2px solid var(--cor-zumbi);
     padding: 25px;
-    border-radius: 8px;
+    border-radius: var(--borda-suave);
+    box-shadow: var(--sombra-padrao);
 }
 
-button[type="submit"]{
-    background-color: var(--cor-zumbi);
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
+legend {
+    color: var(--cor-zumbi);
+    font-weight: bold;
+    padding: 0 10px;
 }
 
-button:hover{
-    background-color: var(--cor-sangue);
-}
-
-input[type="text"],
-input[type="email"],
-select{
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 4px;
-
-}
-
-input[type="text"],
-input[type="email"],
-select{
-    background-color: #333;
-    color: #fff;
-    border: 1px solid #555;
-}
-
-input:focus,
-input:select{
-    outline: none;
-    border-color: var(--cor-zumbi);
-}
-
-label{
+label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-details{
-    background-color: #222;
+input[type="text"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: var(--borda-suave);
+    background-color: var(--cor-input-fundo);
+    color: var(--cor-input-texto);
+    border: 1px solid #555555;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--cor-zumbi);
+}
+
+.opcao {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.opcao label {
+    margin: 0;
+}
+
+.opcao input {
+    accent-color: var(--cor-zumbi);
+}
+
+/* BOTÕES */
+button {
+    cursor: pointer;
+    transition: background-color var(--transicao-rapida);
+}
+
+button:hover {
+    background-color: var(--cor-sangue);
+    color: #ffffff;
+}
+
+.botao-match {
+    background-color: var(--cor-zumbi);
+    color: #ffffff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: var(--borda-suave);
+    width: 100%;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+#btn-tema {
+    border-radius: var(--borda-arredondada);
+    padding: var(--espaco-p) var(--espaco-m);
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    background-color: var(--cor-texto-base);
+    color: var(--cor-fundo-base);
+    border: none;
+    box-shadow: var(--sombra-padrao);
+}
+
+/* PERGUNTAS FREQUENTES */
+details {
+    background-color: var(--cor-fundo-base);
     padding: 15px;
     margin-bottom: 10px;
     border-left: 4px solid var(--cor-sangue);
 }
 
-summary{
+summary {
     cursor: pointer;
     font-weight: bold;
     color: var(--cor-zumbi);
 }
 
-details p{
+details p {
     margin-top: 15px;
-    color: #bbb;
+    color: var(--cor-texto-base);
 }
 
-footer{
+/* RODAPÉ */
+footer {
     text-align: center;
     padding: 30px;
     margin-top: 40px;
-    border-top: 1px solid #333;
+    border-top: 1px solid #333333;
 }
 
-@media(max-width: 768px) {
-    header{
-        flex-direction: column;
-        gap: 15px;
+/* RESPONSIVIDADE */
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: var(--espaco-g);
+    }
+
+    #beneficios {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    #beneficios > * {
+        flex: 1;
+    }
+
+    .botao-match {
+        width: auto;
+    }
+    
+    table {
+        display: table;
     }
 }
 
-@media(max-width: 768px) {
-    #beneficios{
-        flex-direction: column;
+@media (max-width: 600px) {
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    fieldset {
+        padding: 15px;
+    }
+}
+
+/* ACESSIBILIDADE */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
     }
 }
