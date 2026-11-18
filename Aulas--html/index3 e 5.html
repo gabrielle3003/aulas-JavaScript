@@ -4,46 +4,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>The Walking Date</title>
+
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
 
     <header>
+
         <h1>The Walking Date</h1>
 
-        <p>Encontre seu verdadeiro amor <em>pós-vida</em>!</p>
+        <div id="barra-alerta"></div>
+
+        <button id="fechar-alerta">X</button>
+
+        <button class="botao-match">
+            Dar Match Sangrento
+        </button>
+
+        <span id="placar-matches">Matches: 0</span>
+
+        <small id="preview-cracha">Crachá: ...</small>
+
+        <p>
+            Encontre seu verdadeiro amor <em>pós-vida</em>!
+        </p>
 
         <nav>
             <ul>
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#beneficios">Benefícios</a></li>
                 <li><a href="#cadastro">Cadastro</a></li>
+                <li><a href="#planos">Planos</a></li>
             </ul>
         </nav>
 
         <button id="btn-tema" type="button">
             Alterar Sobrevivência (tema)
         </button>
+
     </header>
 
+    
     <main>
+
+        <section id="calculadora-zumbi">
+
+            <h2>Calculadora de Compatibilidade Zumbi</h2>
+
+            <input
+                type="number"
+                id="dias-infectado"
+                placeholder="Seus dias infectado"
+            >
+
+            <input
+                type="number"
+                id="dias-parceiro"
+                placeholder="Dias do parceiro"
+            >
+
+            <button id="btn-calcular">
+                Calcular Química
+            </button>
+
+            <p id="resultado-quimica"></p>
+
+        </section>
+
         <section id="boas-vindas">
+
             <h2 id="inicio">Bem-vindos, casal de zumbis!</h2>
 
             <figure>
+
                 <img
                     src="https://st.depositphotos.com/1724125/2031/v/950/depositphotos_20310287-stock-illustration-zombie-love.jpg"
-                    alt="Casal de zumbis felizes.">
+                    alt="Casal de zumbis felizes."
+                >
 
                 <figcaption>
                     Amor verdadeiro além do túmulo.
                 </figcaption>
+
             </figure>
+
         </section>
 
         <section id="beneficios">
+
             <h2>Por que usar o The Walking Date?</h2>
 
             <ol>
@@ -53,57 +105,76 @@
             </ol>
 
             <aside>
+
                 <h3>Dica do Cupido Zumbi</h3>
 
                 <p>
                     Cuidado com encontros com sobreviventes armados!
                     Escolha locais seguros para seus encontros e fique atento.
                 </p>
+
             </aside>
+
         </section>
 
         <section id="depoimentos">
+
             <article>
+
                 <h3>A história de um zumbi apaixonado...</h3>
 
                 <blockquote>
+
                     <p>
                         Depois de tantos anos vagando sozinho,
                         finalmente encontrei alguém especial.
                         Agora até meu coração morto bate mais forte!
                     </p>
+
                 </blockquote>
 
                 <p>
                     Autor:
                     <cite>Esqueletudo, o zumbi apaixonado.</cite>
                 </p>
+
             </article>
+
         </section>
 
         <section id="faq">
+
             <h2>Perguntas Frequentes</h2>
 
             <details>
+
                 <summary>Zumbis veganos são aceitos?</summary>
+
                 <p>
                     Sim! Todos os zumbis são bem-vindos,
                     independentemente de sua dieta.
                 </p>
+
             </details>
 
             <details>
+
                 <summary>O cadastro é gratuito?</summary>
+
                 <p>
                     Sim! Você pode começar pelo plano gratuito.
                 </p>
+
             </details>
+
         </section>
 
         <section id="planos">
+
             <h2>Planos de Assinatura</h2>
 
             <table>
+
                 <caption>Planos de Assinatura</caption>
 
                 <thead>
@@ -115,6 +186,7 @@
                 </thead>
 
                 <tbody>
+
                     <tr>
                         <td>Gratuito</td>
                         <td>Conhecer pessoas</td>
@@ -126,16 +198,21 @@
                         <td>Conversas ilimitadas</td>
                         <td>25</td>
                     </tr>
+
                 </tbody>
+
             </table>
+
         </section>
 
         <section id="cadastro">
+
             <h2>Faça seu cadastro</h2>
 
             <form action="#" method="POST">
 
                 <fieldset>
+
                     <legend>Seus Dados Mortais</legend>
 
                     <label for="nome">Nome do Zumbi:</label>
@@ -161,6 +238,7 @@
                     <p>Escolha sua dieta principal:</p>
 
                     <div class="opcao">
+
                         <input
                             type="radio"
                             id="miolos"
@@ -168,27 +246,35 @@
                             value="Miolos"
                             required
                         >
+
                         <label for="miolos">Miolos</label>
+
                     </div>
 
                     <div class="opcao">
-                        <input 
-                        type="radio"
-                        id="musculos"
-                        name="dieta"
-                        value="musculos"
+
+                        <input
+                            type="radio"
+                            id="musculos"
+                            name="dieta"
+                            value="musculos"
                         >
+
                         <label for="musculos">Musculos</label>
+
                     </div>
 
                     <div class="opcao">
+
                         <input
                             type="radio"
                             id="ambos"
                             name="dieta"
                             value="Ambos"
                         >
+
                         <label for="ambos">Ambos</label>
+
                     </div>
 
                     <label for="decomposicao">
@@ -196,9 +282,11 @@
                     </label>
 
                     <select id="decomposicao" name="decomposicao">
+
                         <option value="baixo">Baixo</option>
                         <option value="medio">Médio</option>
                         <option value="alto">Alto</option>
+
                     </select>
 
                     <button type="submit" class="botao-match">
@@ -206,14 +294,19 @@
                     </button>
 
                 </fieldset>
+
             </form>
+
         </section>
+
     </main>
 
     <footer>
+
         <small>
             © 2026 The Walking Date. Todos os direitos reservados.
         </small>
+
     </footer>
 
 </body>
